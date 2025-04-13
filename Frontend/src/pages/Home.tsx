@@ -94,11 +94,27 @@ export default function Home() {
         {
           method: "POST",
           body: formData,
+          credentials: "include"
         }
       );
 
+      const result = await response.json();
+
+      if(result['engine_results'].length == 0){
+        const ml_model_response = await fetch(
+          "http://localhost:5000",
+          {
+            method: "POST",
+            body: formData,
+            credentials: "include"
+          }
+        );
+
+        console.log("ML Model Response:", ml_model_response);
+      }
+
       if (response.ok) {
-        const result = await response.json();
+        
         console.log("File uploaded successfully:", result);
 
         try {
@@ -108,6 +124,7 @@ export default function Home() {
               prompt: result,
               method: "POST",
               body: formData,
+              credentials: "include"
             }
           );
           if (response1.status >= 200 && response1.status < 300) {

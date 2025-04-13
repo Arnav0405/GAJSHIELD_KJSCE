@@ -28,7 +28,7 @@ def exe_to_image(byte_data):
     
     return output_path
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/mlReport', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # Check if a file was uploaded

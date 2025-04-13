@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
-import Scan from "./pages/Scan";
+import Dashboard from "./pages/dashboard";
+import Scan from "./pages/scan";
 import Auth from "./pages/Auth";
 import Chatbox from "./pages/Chatbox";
 import ResultsPage from "./pages/Results";
